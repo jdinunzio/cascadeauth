@@ -61,7 +61,7 @@ func initCmd(file *os.File) []* exec.Cmd {
         line := getLine(file)
         if line == "" { break }
         parts := strings.Fields(line)
-        cmd[i], e = exec.Run(parts[0], parts[1:], environ, exec.Pipe, exec.Pipe, exec.Pipe)
+        cmd[i], e = exec.Run(parts[0], parts, environ, exec.Pipe, exec.Pipe, exec.Pipe)
         exitOnError(&e)
     }
     return cmd[0:i]
