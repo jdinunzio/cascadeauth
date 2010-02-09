@@ -85,6 +85,9 @@ func main() {
     var pre, post string
     for ;; {
         pre = getLine(os.Stdin)
+        if len(pre) == 0 {
+            break
+        }
         for i:=0; i < len(cmd); i++ {
             cmd[i].Stdin.WriteString(pre)
             post = getLine(cmd[i].Stdout)
